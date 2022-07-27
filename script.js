@@ -29,147 +29,164 @@ const zero = document.querySelector("#zero");
 let firstInputArray = [];
 let mathSign = "";
 let secondInputArray = [];
+let firstInputNumber = 0;
+let secondInputNumber = 0;
 
 // input numbers
 one.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(1);
-        firstInputField.innerHTML = 1;
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(1);
-        secondInputField.innerHTML = 1;
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 two.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(2);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(2);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 three.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(3);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(3);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 four.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(4);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(4);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 five.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(5);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(5);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 six.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(6);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(6);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 seven.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(7);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(7);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 eight.addEventListener("click", () => {
     if (mathSign === "") { 
         firstInputArray.push(8);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(8);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 nine.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(9);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(9);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 zero.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(0);
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
     }
-    else {
+    else if (mathSign !== "") {
         secondInputArray.push(0);
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
 
 // math functions
 addition.addEventListener("click",() => {
-    const firstInputNumber = firstInputArray.join();
-    mathSign = "+";
-    return firstInputNumber;
+    //const firstInputNumber = Number(firstInputArray.join());
+    mathSign = "+", functionBox.innerHTML = "+";
+    //return firstInputNumber;
 });
 
 subtraction.addEventListener("click",() => {
-    const firstInputNumber = firstInputArray.join();
-    mathSign = "-";
-    return firstInputNumber;
+    //const firstInputNumber = Number(firstInputArray.join());
+    mathSign = "-", functionBox.innerHTML = "-";
+    //return firstInputNumber;
 });
 
 multiplication.addEventListener("click",() => {
-    const firstInputNumber = firstInputArray.join();
-    mathSign = "x";
-    return firstInputNumber;
+    //const firstInputNumber = Number(firstInputArray.join());
+    mathSign = "x", functionBox.innerHTML = "x";
+    //return firstInputNumber;
 });
 
 division.addEventListener("click",() => {
-    const firstInputNumber = firstInputArray.join();
-    mathSign = "/";
-    return firstInputNumber;
+    //const firstInputNumber = Number(firstInputArray.join());
+    mathSign = "/", functionBox.innerHTML = "/";
+    //return firstInputNumber;
 });
 
 exponent.addEventListener("click",() => {
-    const firstInputNumber = firstInputArray.join();
-    mathSign = "^";
-    return firstInputNumber;
+    //const firstInputNumber = Number(firstInputArray.join());
+    mathSign = "^", functionBox.innerHTML = "^";
+    //return firstInputNumber;
 })
 // second input number, how to get the presses after a function button is clicked?
 
-
 // what happens when you press =
 equal.addEventListener("click",() =>{
-    const secondInputNumber = secondInputArray.join();
+    firstInputNumber = Number(firstInputArray.join(""))
+    secondInputNumber = Number(secondInputArray.join(""))
     let finalResult = 0
-        if (mathSign = "+") {
+        if (mathSign == "+") {
             finalResult = firstInputNumber + secondInputNumber;
         }
-        else if (mathSign = "-") {
+        else if (mathSign == "-") {
             finalResult = firstInputNumber - secondInputNumber;
         }
-        else if (mathSign = "x") {
+        else if (mathSign == "x") {
             finalResult = firstInputNumber * secondInputNumber;
         }
-        else if (mathSign = "/") {
+        else if (mathSign == "/") {
             finalResult = firstInputNumber/secondInputNumber;
         }
-        else if (mathSign = "^"); {
+        else if (mathSign == "^"); {
             finalResult = Math.pow(firstInputNumber, secondInputNumber);
         }
     answerField.innerHTML = finalResult;
-    firstInputArray = [];
-    mathSign = "";
-    secondInputArray = [];
 })
 // have button clicks go into first input as a string
 // turn string into a number
