@@ -1,4 +1,55 @@
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
+}
+
+body {
+  /*background-color: black;*/
+  border: 2px solid black;
+  /*main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid black; */
+}
+body h1, body h2, body h3, body h4, body h5 {
+  text-align: center;
+  /*color: white; */
+  border: 2px solid black;
+}
+body h1 h3, body h1 h3, body h1 h4, body h1 h5, body h2 h3, body h2 h3, body h2 h4, body h2 h5, body h3 h3, body h3 h3, body h3 h4, body h3 h5, body h4 h3, body h4 h3, body h4 h4, body h4 h5, body h5 h3, body h5 h3, body h5 h4, body h5 h5 {
+  font-size: 30px;
+  margin: 10px;
+}
+body .inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  padding: 5% 7% 5% 7%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.misc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid black;
+}
+
+.functions {
+  border: 2px solid black;
+}
+
+.numbers {
+  border: 2px solid black;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }/*# sourceMappingURL=styles.css.map */
