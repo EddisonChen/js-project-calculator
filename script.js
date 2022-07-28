@@ -144,28 +144,46 @@ decimal.addEventListener("click", () => {
 
 // math functions
 addition.addEventListener("click",() => {
-    mathSign = "+", functionBox.innerHTML = "+";
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign = "+", functionBox.innerHTML = "+";
+    }
+    else;
 });
 
 subtraction.addEventListener("click",() => {
-    mathSign = "-", functionBox.innerHTML = "-";
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign = "-", functionBox.innerHTML = "-";
+    }
+    else;
 });
 
 multiplication.addEventListener("click",() => {
-    mathSign = "x", functionBox.innerHTML = "x";
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign = "x", functionBox.innerHTML = "x";
+    }
+    else;
 });
 
 division.addEventListener("click",() => {
-    mathSign = "/", functionBox.innerHTML = "/";
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign = "/", functionBox.innerHTML = "/";
+    }
+    else;
 });
 
 exponent.addEventListener("click",() => {
-    mathSign = "^", functionBox.innerHTML = "^";
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign = "^", functionBox.innerHTML = "^";
+    }
+    else;
 });
 
 root.addEventListener("click", () => {
-    mathSign ="√", functionBox.innerHTML = "√";
-})
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign ="√", functionBox.innerHTML = "√";
+    }
+    else;
+});
 
 // second input number, how to get the presses after a function button is clicked?
 
@@ -196,16 +214,21 @@ equal.addEventListener("click",() =>{
             default:
                 finalResult = "error";
         }
-    answerField.innerHTML = finalResult;
-})
+    answerField.innerHTML = ` = ${finalResult}`;
+    firstInputArray = [], firstInputField.innerHTML = "";
+    mathSign = "", functionBox.innerHTML ="";
+    secondInputArray = [], secondInputField.innerHTML = "";
+});
 
+// ac button
 ac.addEventListener("click", () => {
     firstInputArray = [], firstInputField.innerHTML = "";
     mathSign = "", functionBox.innerHTML ="";
     secondInputArray = [], secondInputField.innerHTML = "";
     answerField.innerHTML = "";
-})
+});
 
+// backspace button, clears each input field rather than one number at a time
 backspace.addEventListener("click", () => {
     if (secondInputField.innerHTML != "") {
         secondInputField.innerHTML = "", secondInputArray = [];
@@ -217,7 +240,7 @@ backspace.addEventListener("click", () => {
     else if (firstInputField.innerHTML != "") {
         firstInputField.innerHTML = "", firstInputArray = [];
     }
-})
+});
 // have button clicks go into first input as a string
 // turn string into a number
 // when a function button is clicked (if the string contains a specific operator, do that function, if statement)
