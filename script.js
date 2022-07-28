@@ -239,6 +239,7 @@ remainder.addEventListener("click", () => {
 // second input number, how to get the presses after a function button is clicked?
 
 // what happens when you press =
+
 equal.addEventListener("click",() =>{
     let firstInputNumber = Number(firstInputArray.join(""));
     let secondInputNumber = Number(secondInputArray.join(""));
@@ -273,9 +274,7 @@ equal.addEventListener("click",() =>{
     firstInputArray = [];
     mathSign = "";
     secondInputArray = [];
-    // secondInputField.innerHTML = "";
-    // functionBox.innerHTML ="";
-    // firstInputField.innerHTML = "";
+    return finalResult;
 });
 
 // ac button
@@ -306,7 +305,5 @@ backspace.addEventListener("click", () => {
 // when = is pressed, submits, prints answer, resets to first input
 
 //to add
-// add parenthesis if feeling ambitious
 // design
-// multiple calculations? ehh
-// better backspace
+// multiple calculations? getting the result to turn into the firstinput when a function button is clicked
