@@ -198,6 +198,14 @@ subtraction.addEventListener("click",() => {
     if (firstInputField.innerHTML !== "" && mathSign =="") {
         mathSign = "-", functionBox.innerHTML = "-";
     }
+    else if (firstInputField.innerHTML == "" && mathSign =="") {
+        firstInputArray.push("-");
+        firstInputField.innerHTML = "-";
+    }
+    else if (mathSign !== "") {
+        secondInputArray.push("-");
+        secondInputField.innerHTML = "-";
+    }
     else;
 });
 
@@ -266,6 +274,9 @@ equal.addEventListener("click",() =>{
             // case mathSign = "%":
             //     finalResult = firstInputNumber%secondInputNumber;
             // break;
+            case mathSign = "" && firstInputField.innerHTML !== "":
+                finalResult = firstInputNumber;
+            break;
             default:
                 finalResult = "error";
         }
@@ -308,3 +319,5 @@ backspace.addEventListener("click", () => {
 // design
 // multiple calculations? getting the result to turn into the firstinput when a function button is clicked
 // better backspace functionality
+
+// get the decimal point to stop erasing the first textfield, works fine on the second one

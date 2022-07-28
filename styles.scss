@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Righteous";
     font-size: 20px;
     margin: 0;
 }
 
 body {
-    background-color: black;
+    background-color: #1C1C1A;
     // border: 2px solid black;
     display: grid;
     grid-template-columns: 1fr;
@@ -17,7 +19,7 @@ body {
 }
 
     h1 {
-        font-size: 35px;
+        font-size: 50px;
         text-align: center;
         color: whitesmoke;
         // border: 2px solid black; 
@@ -30,7 +32,7 @@ body {
         grid-template-rows: 1fr 3fr;
     
         h2, h3, h4, h5 {
-            font-size: 50px;
+            font-size: 60px;
         }
     
         .inputs {
@@ -79,11 +81,16 @@ body {
     }
 
    button {
-    background-color: slategray;
+    background-color: #343C5B;
     border-radius:11px;
     color: whitesmoke;
-    font-size: 40px;
-    border-color: slategray;
+    font-size: 50px;
+    border-color: #343C5B;
+   }
+
+   #equal {
+        border-radius: 30px;
+        background-color:#DDDB48 ;
    }
    
    // add views for larger screen sizes

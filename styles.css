@@ -1,11 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Righteous";
   font-size: 20px;
   margin: 0;
 }
 
 body {
-  background-color: black;
+  background-color: #1C1C1A;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 17.09fr;
@@ -16,7 +17,7 @@ body {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 50px;
   text-align: center;
   color: whitesmoke;
 }
@@ -27,7 +28,7 @@ main {
   grid-template-rows: 1fr 3fr;
 }
 main h2, main h3, main h4, main h5 {
-  font-size: 50px;
+  font-size: 60px;
 }
 main .inputs {
   display: flex;
@@ -67,9 +68,14 @@ main #keys #otherkeys .numbers {
 }
 
 button {
-  background-color: slategray;
+  background-color: #343C5B;
   border-radius: 11px;
   color: whitesmoke;
-  font-size: 40px;
-  border-color: slategray;
+  font-size: 50px;
+  border-color: #343C5B;
+}
+
+#equal {
+  border-radius: 30px;
+  background-color: #DDDB48;
 }/*# sourceMappingURL=styles.css.map */
