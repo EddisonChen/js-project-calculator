@@ -307,3 +307,4 @@ backspace.addEventListener("click", () => {
 //to add
 // design
 // multiple calculations? getting the result to turn into the firstinput when a function button is clicked
+// better backspace functionality
