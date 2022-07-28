@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: black;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 17.09fr;
@@ -13,6 +14,7 @@ body {
 h1 {
   font-size: 35px;
   text-align: center;
+  color: whitesmoke;
 }
 
 main {
@@ -30,6 +32,7 @@ main .inputs {
   font-size: 40px;
   padding-top: 15%;
   padding-bottom: 15%;
+  color: orange;
 }
 main #keys {
   display: grid;
@@ -58,4 +61,12 @@ main #keys #otherkeys .numbers {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+button {
+  background-color: slategray;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: 30px;
+  border-color: gray;
 }/*# sourceMappingURL=styles.css.map */

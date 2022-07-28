@@ -5,7 +5,7 @@
 }
 
 body {
-    // background-color: black;
+    background-color: black;
     // border: 2px solid black;
     display: grid;
     grid-template-columns: 1fr;
@@ -15,6 +15,7 @@ body {
     h1 {
         font-size: 35px;
         text-align: center;
+        color: whitesmoke;
         // border: 2px solid black; 
     }
     
@@ -36,6 +37,7 @@ body {
             font-size: 40px;
             padding-top: 15%;
             padding-bottom:15%;
+            color: orange;
         }
 
         #keys {
@@ -73,4 +75,10 @@ body {
         }
     }
 
-   
+   button {
+    background-color: slategray;
+    border-radius:5px;
+    color: whitesmoke;
+    font-size: 30px;
+    border-color: gray;
+   }
