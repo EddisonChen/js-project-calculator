@@ -229,12 +229,12 @@ root.addEventListener("click", () => {
     else;
 });
 
-remainder.addEventListener("click", () => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
-        mathSign ="%", functionBox.innerHTML = "%";
-    }
-    else;
-});
+// remainder.addEventListener("click", () => {
+//     if (firstInputField.innerHTML !== "" && mathSign =="") {
+//         mathSign ="%", functionBox.innerHTML = "%";
+//     }
+//     else;
+// });
 
 // second input number, how to get the presses after a function button is clicked?
 
@@ -263,9 +263,9 @@ equal.addEventListener("click",() =>{
             case mathSign = "√":
                 finalResult = Math.pow(firstInputNumber, (1/secondInputNumber));
             break;
-            case mathSign = "%":
-                finalResult = firstInputNumber%secondInputNumber;
-            break;
+            // case mathSign = "%":
+            //     finalResult = firstInputNumber%secondInputNumber;
+            // break;
             default:
                 finalResult = "error";
         }
