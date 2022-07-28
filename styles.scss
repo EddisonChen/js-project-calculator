@@ -5,22 +5,22 @@
 }
 
 body {
-    /*background-color: black;*/
-    border: 2px solid black;
+    // background-color: black;
+    // border: 2px solid black;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 15.55fr;
+    grid-template-rows: 1fr 17.09fr;
 }
 
     h1 {
         font-size: 35px;
         text-align: center;
-        border: 2px solid black; 
+        // border: 2px solid black; 
     }
     
     main {
         display:grid;
-        border: 2px solid black;
+        // border: 2px solid black;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 3fr;
     
@@ -29,7 +29,7 @@ body {
         }
     
         .inputs {
-            border: 2px solid black;
+            // border: 2px solid black;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -71,34 +71,6 @@ body {
                 }
             }
         }
-
-        
-
-
-/*
-
-        .functions {
-            border: 2px solid black;
-            display:grid;
-            grid-template-columns: 2fr 2fr;
-        }
-
-        .numbers {
-            border: 2px solid black;
-            display:grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-
-
-        }
-
-        .inputs {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-    */
     }
 
    
