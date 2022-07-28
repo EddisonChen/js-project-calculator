@@ -13,7 +13,7 @@ const multiplication = document.querySelector("#multiplication");
 const division = document.querySelector("#division");
 const equal = document.querySelector("#equal");
 const exponent = document.querySelector("#exponent");
-const squareRoot = document.querySelector("#squareRoot");
+const root = document.querySelector("#root");
 // const numbers = document.querySelectorAll(".numbers")
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -29,8 +29,6 @@ const zero = document.querySelector("#zero");
 let firstInputArray = [];
 let mathSign = "";
 let secondInputArray = [];
-let firstInputNumber = 0;
-let secondInputNumber = 0;
 
 // input numbers
 one.addEventListener("click", () => {
@@ -133,64 +131,101 @@ zero.addEventListener("click", () => {
         secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
+decimal.addEventListener("click", () => {
+    if (mathSign === "") {
+        firstInputArray.push(".");
+        firstInputField.innerHTML = Number(firstInputArray.join(""));
+    }
+    else if (mathSign !== "") {
+        secondInputArray.push(".");
+        secondInputField.innerHTML = Number(secondInputArray.join(""));
+    }
+});
 
 // math functions
 addition.addEventListener("click",() => {
-    //const firstInputNumber = Number(firstInputArray.join());
     mathSign = "+", functionBox.innerHTML = "+";
-    //return firstInputNumber;
 });
 
 subtraction.addEventListener("click",() => {
-    //const firstInputNumber = Number(firstInputArray.join());
     mathSign = "-", functionBox.innerHTML = "-";
-    //return firstInputNumber;
 });
 
 multiplication.addEventListener("click",() => {
-    //const firstInputNumber = Number(firstInputArray.join());
     mathSign = "x", functionBox.innerHTML = "x";
-    //return firstInputNumber;
 });
 
 division.addEventListener("click",() => {
-    //const firstInputNumber = Number(firstInputArray.join());
     mathSign = "/", functionBox.innerHTML = "/";
-    //return firstInputNumber;
 });
 
 exponent.addEventListener("click",() => {
-    //const firstInputNumber = Number(firstInputArray.join());
     mathSign = "^", functionBox.innerHTML = "^";
-    //return firstInputNumber;
+});
+
+root.addEventListener("click", () => {
+    mathSign ="√", functionBox.innerHTML = "√";
 })
+
 // second input number, how to get the presses after a function button is clicked?
 
 // what happens when you press =
 equal.addEventListener("click",() =>{
-    firstInputNumber = Number(firstInputArray.join(""))
-    secondInputNumber = Number(secondInputArray.join(""))
-    let finalResult = 0
-        if (mathSign == "+") {
-            finalResult = firstInputNumber + secondInputNumber;
-        }
-        else if (mathSign == "-") {
-            finalResult = firstInputNumber - secondInputNumber;
-        }
-        else if (mathSign == "x") {
-            finalResult = firstInputNumber * secondInputNumber;
-        }
-        else if (mathSign == "/") {
-            finalResult = firstInputNumber/secondInputNumber;
-        }
-        else if (mathSign == "^"); {
-            finalResult = Math.pow(firstInputNumber, secondInputNumber);
+    let firstInputNumber = Number(firstInputArray.join(""));
+    let secondInputNumber = Number(secondInputArray.join(""));
+    let finalResult = 0;
+        switch (mathSign) {
+            case mathSign = "+":
+                finalResult = firstInputNumber + secondInputNumber;
+            break;
+            case mathSign = "-":
+                finalResult = firstInputNumber - secondInputNumber;
+            break;
+            case mathSign = "x":
+                finalResult = firstInputNumber * secondInputNumber;
+            break;
+            case mathSign = "/":
+                finalResult = firstInputNumber/secondInputNumber;
+            break;
+            case mathSign = "^":
+                finalResult = Math.pow(firstInputNumber, secondInputNumber);
+            break;
+            case mathSign = "√":
+                finalResult = Math.pow(firstInputNumber, (1/secondInputNumber));
+            break;
+            default:
+                finalResult = "error";
         }
     answerField.innerHTML = finalResult;
+})
+
+ac.addEventListener("click", () => {
+    firstInputArray = [], firstInputField.innerHTML = "";
+    mathSign = "", functionBox.innerHTML ="";
+    secondInputArray = [], secondInputField.innerHTML = "";
+    answerField.innerHTML = "";
+})
+
+backspace.addEventListener("click", () => {
+    if (secondInputField.innerHTML != "") {
+        secondInputField.innerHTML = "", secondInputArray = [];
+    }
+    else if (functionBox.innerHTML != "") {
+        functionBox.innerHTML = ""; 
+        mathSign = "";
+    }
+    else if (firstInputField.innerHTML != "") {
+        firstInputField.innerHTML = "", firstInputArray = [];
+    }
 })
 // have button clicks go into first input as a string
 // turn string into a number
 // when a function button is clicked (if the string contains a specific operator, do that function, if statement)
 // have button clicks go into second input
 // when = is pressed, submits, prints answer, resets to first input
+
+//to add
 // add parenthesis if feeling ambitious
+// design
+// multiple calculations? ehh
+// better backspace
