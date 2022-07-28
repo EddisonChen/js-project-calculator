@@ -1,61 +1,78 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
+    margin: 0;
 }
 
 body {
     /*background-color: black;*/
     border: 2px solid black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 15.6fr;
+}
 
-    h1, h2, h3, h4, h5 {
+    h1 {
+        font-size: 35px;
         text-align: center;
-        /*color: white; */
-        border: 2px solid black;
-    h3, h3, h4, h5 {
-        font-size: 30px;
-        margin: 10px;
+        border: 2px solid black; 
     }
+    
+    main {
         
-
-    }
-    /*main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid black; */
-            
+    
+        h2, h3, h4, h5 {
+            font-size: 50px;
+        }
+    
         .inputs {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
+            font-size: 40px;
+            padding-top: 15%;
+            padding-bottom:15%;
         }
-    }
+/*
+        #keys {
 
-    button {
-        padding: 5% 7% 5% 7%;
-        background-color: white;
-        border-radius: 10px;
-    }
+        }
 
-    .misc {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        ;
-        border: 2px solid black;
-    }
+        }
 
-    .functions {
-        border: 2px solid black;
-    }
+        button {
+            padding: 5% 7% 5% 7%;
+            background-color: white;
+            border-radius: 10px;
+        }
 
-    .numbers {
-        border: 2px solid black;
-    }
+        .misc {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            border: 2px solid black;
+        }
 
-    .inputs {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+        .functions {
+            border: 2px solid black;
+            display:grid;
+            grid-template-columns: 2fr 2fr;
+        }
 
+        .numbers {
+            border: 2px solid black;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+
+
+        }
+
+        .inputs {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    */
+    }

@@ -14,6 +14,7 @@ const division = document.querySelector("#division");
 const equal = document.querySelector("#equal");
 const exponent = document.querySelector("#exponent");
 const root = document.querySelector("#root");
+const remainder = document.querySelector("#remainder");
 // const numbers = document.querySelectorAll(".numbers")
 const one = document.querySelector("#one");
 const two = document.querySelector("#two");
@@ -35,6 +36,8 @@ one.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(1);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(1);
@@ -45,6 +48,8 @@ two.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(2);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(2);
@@ -55,6 +60,8 @@ three.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(3);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(3);
@@ -65,6 +72,8 @@ four.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(4);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(4);
@@ -75,6 +84,8 @@ five.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(5);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(5);
@@ -85,6 +96,8 @@ six.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(6);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(6);
@@ -95,6 +108,8 @@ seven.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(7);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(7);
@@ -105,6 +120,8 @@ eight.addEventListener("click", () => {
     if (mathSign === "") { 
         firstInputArray.push(8);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(8);
@@ -115,6 +132,8 @@ nine.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(9);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(9);
@@ -125,6 +144,8 @@ zero.addEventListener("click", () => {
     if (mathSign === "") {
         firstInputArray.push(0);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
     else if (mathSign !== "") {
         secondInputArray.push(0);
@@ -132,13 +153,36 @@ zero.addEventListener("click", () => {
     }
 });
 decimal.addEventListener("click", () => {
-    if (mathSign === "") {
+    // when starting new calculation, pushes a decimal point to first input box
+    if (mathSign === "" && firstInputField.innerHTML == "") {
         firstInputArray.push(".");
-        firstInputField.innerHTML = Number(firstInputArray.join(""));
+        firstInputField.innerHTML = ".";
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
     }
-    else if (mathSign !== "") {
+    // if theres already numbers in the first input box, pushes a decimal point to first input box
+    else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField == "" ) {
+        firstInputArray.push(".");
+        firstInputField.innerHTML = Number(firstInputArray.join("")) + ".";
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
+    }
+    // after finishing a calculation, if theres a number in the answer field, pushes a decimal point to first input box
+    else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField !== "") {
+        firstInputArray.push(".");
+        firstInputField.innerHTML = ".";
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML ="";
+    }
+    // pushes decimal point to second input box if no numbers already inside it
+    else if (mathSign !== "" && secondInputField.innerHTML == "") {
         secondInputArray.push(".");
-        secondInputField.innerHTML = Number(secondInputArray.join(""));
+        secondInputField.innerHTML = ".";
+    }
+    // pushes decimal point to second input box if numbers are already inside
+    else if (mathSign !== "" && secondInputField.innerHTML !== "") {
+        secondInputArray.push(".");
+        secondInputField.innerHTML = Number(secondInputArray.join("")) + ".";
     }
 });
 
@@ -185,6 +229,13 @@ root.addEventListener("click", () => {
     else;
 });
 
+remainder.addEventListener("click", () => {
+    if (firstInputField.innerHTML !== "" && mathSign =="") {
+        mathSign ="%", functionBox.innerHTML = "%";
+    }
+    else;
+});
+
 // second input number, how to get the presses after a function button is clicked?
 
 // what happens when you press =
@@ -211,13 +262,20 @@ equal.addEventListener("click",() =>{
             case mathSign = "√":
                 finalResult = Math.pow(firstInputNumber, (1/secondInputNumber));
             break;
+            case mathSign = "%":
+                finalResult = firstInputNumber%secondInputNumber;
+            break;
             default:
                 finalResult = "error";
         }
     answerField.innerHTML = ` = ${finalResult}`;
-    firstInputArray = [], firstInputField.innerHTML = "";
-    mathSign = "", functionBox.innerHTML ="";
-    secondInputArray = [], secondInputField.innerHTML = "";
+    // clears the first and second inpux boxes
+    firstInputArray = [];
+    mathSign = "";
+    secondInputArray = [];
+    // secondInputField.innerHTML = "";
+    // functionBox.innerHTML ="";
+    // firstInputField.innerHTML = "";
 });
 
 // ac button
