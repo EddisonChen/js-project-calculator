@@ -10,6 +10,10 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 17.09fr;
+    max-height: 100vh;
+    max-width: 100vw;
+    height: 100vh;
+    width: 100vw;
 }
 
     h1 {
@@ -35,8 +39,7 @@ body {
             flex-direction: row;
             justify-content: space-around;
             font-size: 40px;
-            padding-top: 15%;
-            padding-bottom:15%;
+            align-items: center;
             color: orange;
         }
 
@@ -82,3 +85,5 @@ body {
     font-size: 30px;
     border-color: gray;
    }
+   
+   // add views for larger screen sizes
