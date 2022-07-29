@@ -1,5 +1,3 @@
-// how to get button press to show up in a box?
-
 const firstInputField = document.querySelector("#firstInputBox");
 const functionField = document.querySelector("#functionBox");
 const secondInputField = document.querySelector("#secondInputBox")
@@ -152,27 +150,57 @@ zero.addEventListener("click", () => {
         secondInputField.innerHTML = Number(secondInputArray.join(""));
     }
 });
+
 decimal.addEventListener("click", () => {
+    // switch (mathSign, firstInputField.innerHTML, secondInputField.innerHTML, answerField) {
+    //     case mathSign === "" && firstInputField.innerHTML == "":
+    //         firstInputArray.push(".");
+    //         firstInputField.innerHTML = ".";
+    //         secondInputField.innerHTML = "";
+    //         functionBox.innerHTML = "";
+    //     break;
+    //     case firstInputField.innerHTML !== "" && mathSign === "" && answerField == "":
+    //         firstInputArray.push(".");
+    //         firstInputField.innerHTML = Number(firstInputArray.join("")) + ".";
+    //         secondInputField.innerHTML = "";
+    //         functionBox.innerHTML = "";
+    //     break;
+    //     case mathSign === "" && firstInputField.innerHTML !== "" && answerField !== "":
+    //         firstInputArray.push(".");
+    //         firstInputField.innerHTML = ".";
+    //         secondInputField.innerHTML = "";
+    //         functionBox.innerHTML = "";
+    //     break;
+    //     case mathSign !== "" && secondInputField.innerHTML == "":
+    //         secondInputArray.push(".");
+    //         secondInputField.innerHTML = ".";
+    //     break;
+    //     case mathSign !== "" && secondInputField.innerHTML !== "":
+    //         secondInputArray.push(".");
+    //         secondInputField.innerHTML = Number(secondInputArray.join("")) + ".";
+    //     default:
+    // }});
+
     // when starting new calculation, pushes a decimal point to first input box
     if (mathSign === "" && firstInputField.innerHTML == "") {
         firstInputArray.push(".");
         firstInputField.innerHTML = ".";
         secondInputField.innerHTML = "";
-        functionBox.innerHTML ="";
+        functionBox.innerHTML = "";
     }
     // if theres already numbers in the first input box, pushes a decimal point to first input box
-    else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField == "" ) {
+    else if (firstInputField.innerHTML !== "" && mathSign === "" && answerField == "" ) {
         firstInputArray.push(".");
         firstInputField.innerHTML = Number(firstInputArray.join("")) + ".";
         secondInputField.innerHTML = "";
-        functionBox.innerHTML ="";
+        functionBox.innerHTML = "";
     }
     // after finishing a calculation, if theres a number in the answer field, pushes a decimal point to first input box
     else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField !== "") {
         firstInputArray.push(".");
         firstInputField.innerHTML = ".";
         secondInputField.innerHTML = "";
-        functionBox.innerHTML ="";
+        functionBox.innerHTML = "";
     }
     // pushes decimal point to second input box if no numbers already inside it
     else if (mathSign !== "" && secondInputField.innerHTML == "") {
@@ -321,3 +349,4 @@ backspace.addEventListener("click", () => {
 // better backspace functionality
 
 // get the decimal point to stop erasing the first textfield, works fine on the second one
+// maybe if a function button is clicked when the secondinputfield is occupied, itll simulate the = sign being pressed and the finalresult will be placed in the firstinputfield box, with the new function icon
