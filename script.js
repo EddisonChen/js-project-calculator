@@ -182,21 +182,21 @@ decimal.addEventListener("click", () => {
     // }});
 
     // when starting new calculation, pushes a decimal point to first input box
-    if (mathSign === "" && firstInputField.innerHTML == "") {
+    if (mathSign === "" && firstInputField.innerHTML == "" && secondInputField.innerHTML == "") {
         firstInputArray.push(".");
         firstInputField.innerHTML = ".";
         secondInputField.innerHTML = "";
         functionBox.innerHTML = "";
     }
     // if theres already numbers in the first input box, pushes a decimal point to first input box
-    else if (firstInputField.innerHTML !== "" && mathSign === "" && answerField == "" ) {
+    else if (firstInputField.innerHTML !== "" && mathSign === "" && secondInputField.innerHTML == "") {
         firstInputArray.push(".");
         firstInputField.innerHTML = Number(firstInputArray.join("")) + ".";
         secondInputField.innerHTML = "";
         functionBox.innerHTML = "";
     }
     // after finishing a calculation, if theres a number in the answer field, pushes a decimal point to first input box
-    else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField !== "") {
+    else if (mathSign === "" && firstInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputArray.push(".");
         firstInputField.innerHTML = ".";
         secondInputField.innerHTML = "";
