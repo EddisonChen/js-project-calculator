@@ -216,7 +216,7 @@ decimal.addEventListener("click", () => {
 
 // math functions
 addition.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign == "") {
         mathSign = "+", functionBox.innerHTML = "+";
     }
     else;
@@ -337,16 +337,15 @@ backspace.addEventListener("click", () => {
         firstInputField.innerHTML = "", firstInputArray = [];
     }
 });
-// have button clicks go into first input as a string
-// turn string into a number
-// when a function button is clicked (if the string contains a specific operator, do that function, if statement)
+// have button clicks go into first input as a array
+// turn array into a number
+// when a function button is clicked, mathSign = that function symbol
 // have button clicks go into second input
-// when = is pressed, submits, prints answer, resets to first input
+// when = is pressed, firstInput symbol secondInput, result is shown
 
 //to add
 // design
 // multiple calculations? getting the result to turn into the firstinput when a function button is clicked
 // better backspace functionality
 
-// get the decimal point to stop erasing the first textfield, works fine on the second one
 // maybe if a function button is clicked when the secondinputfield is occupied, itll simulate the = sign being pressed and the finalresult will be placed in the firstinputfield box, with the new function icon
