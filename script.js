@@ -219,6 +219,14 @@ addition.addEventListener("click",() => {
     if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML == "") {
         mathSign = "+", functionBox.innerHTML = "+";
     }
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "+", functionBox.innerHTML = "+";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
+    }
     else;
 });
 
@@ -231,11 +239,19 @@ subtraction.addEventListener("click",() => {
         firstInputField.innerHTML = "-";
     }
     // allows a negative sign to be pushed into the firstInputField after a calculation has already been done
-    else if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
-        firstInputArray.push("-");
-        firstInputField.innerHTML = "-";
-        secondInputField.innerHTML = "";
-        functionBox.innerHTML = "";
+    // else if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+    //     firstInputArray.push("-");
+    //     firstInputField.innerHTML = "-";
+    //     secondInputField.innerHTML = "";
+    //     functionBox.innerHTML = "";
+
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "-", functionBox.innerHTML = "-";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
     }
     else if (mathSign !== "") {
         secondInputArray.push("-");
@@ -248,12 +264,28 @@ multiplication.addEventListener("click",() => {
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "x", functionBox.innerHTML = "x";
     }
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "x", functionBox.innerHTML = "x";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
+    }
     else;
 });
 
 division.addEventListener("click",() => {
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "/", functionBox.innerHTML = "/";
+    }
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "/", functionBox.innerHTML = "/";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
     }
     else;
 });
@@ -262,12 +294,28 @@ exponent.addEventListener("click",() => {
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "^", functionBox.innerHTML = "^";
     }
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "^", functionBox.innerHTML = "^";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
+    }
     else;
 });
 
 root.addEventListener("click", () => {
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign ="√", functionBox.innerHTML = "√";
+    }
+    // turns the finalResult into the firstInputField
+    else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputField.innerHTML = finalResult;
+        firstInputArray.push(finalResult);
+        mathSign = "√", functionBox.innerHTML = "√";
+        secondInputField.innerHTML ="";
+        answerField.innerHTML = "";
     }
     else;
 });
@@ -282,11 +330,10 @@ root.addEventListener("click", () => {
 // second input number, how to get the presses after a function button is clicked?
 
 // what happens when you press =
-
+let finalResult = 0;
 equal.addEventListener("click",() =>{
     let firstInputNumber = Number(firstInputArray.join(""));
     let secondInputNumber = Number(secondInputArray.join(""));
-    let finalResult = 0;
         switch (mathSign) {
             case mathSign = "+":
                 finalResult = firstInputNumber + secondInputNumber;
