@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #1C1C1A;
+  background-color: #A0D9EF;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 17.09fr;
@@ -36,7 +36,7 @@ main .inputs {
   justify-content: space-around;
   font-size: 40px;
   align-items: center;
-  color: orange;
+  color: #E89020;
 }
 main #keys {
   display: grid;
@@ -68,14 +68,16 @@ main #keys #otherkeys .numbers {
 }
 
 button {
-  background-color: #343C5B;
+  background-color: #ffbcd9;
   border-radius: 11px;
-  color: whitesmoke;
+  border-style: double;
+  color: #0D638F;
   font-size: 50px;
-  border-color: #343C5B;
+  border-color: #BF8EA3;
 }
 
 #equal {
   border-radius: 30px;
-  background-color: #DDDB48;
+  background-color: #BDFFBF;
+  color: #0D638F;
 }/*# sourceMappingURL=styles.css.map */

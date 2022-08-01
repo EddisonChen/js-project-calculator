@@ -342,10 +342,3 @@ backspace.addEventListener("click", () => {
 // when a function button is clicked, mathSign = that function symbol
 // have button clicks go into second input
 // when = is pressed, firstInput symbol secondInput, result is shown
-
-//to add
-// design
-// multiple calculations? getting the result to turn into the firstinput when a function button is clicked
-// better backspace functionality
-
-// maybe if a function button is clicked when the secondinputfield is occupied, itll simulate the = sign being pressed and the finalresult will be placed in the firstinputfield box, with the new function icon
