@@ -31,12 +31,14 @@ let secondInputArray = [];
 
 // input numbers
 one.addEventListener("click", () => {
+    // pushes a number into firstInputField if mathSign is empty
     if (mathSign === "") {
         firstInputArray.push(1);
         firstInputField.innerHTML = Number(firstInputArray.join(""));
         secondInputField.innerHTML = "";
         functionBox.innerHTML ="";
     }
+    // pushes number into secondInputField if mathSign isn't empty
     else if (mathSign !== "") {
         secondInputArray.push(1);
         secondInputField.innerHTML = Number(secondInputArray.join(""));
@@ -216,6 +218,7 @@ decimal.addEventListener("click", () => {
 
 // math functions
 addition.addEventListener("click",() => {
+    // adds a + sign if only the firstInputField is occupied
     if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML == "") {
         mathSign = "+", functionBox.innerHTML = "+";
     }
@@ -231,9 +234,11 @@ addition.addEventListener("click",() => {
 });
 
 subtraction.addEventListener("click",() => {
+    // pushes a minus sign if theres only a number in the firstInputField
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "-", functionBox.innerHTML = "-";
     }
+    //pushes a negative sign into the firstInputField if all fields are empty
     else if (firstInputField.innerHTML == "" && mathSign =="") {
         firstInputArray.push("-");
         firstInputField.innerHTML = "-";
@@ -245,7 +250,7 @@ subtraction.addEventListener("click",() => {
     //     secondInputField.innerHTML = "";
     //     functionBox.innerHTML = "";
 
-    // turns the finalResult into the firstInputField
+    // turns the finalResult into the firstInputField and pushes minus sign into mathSign
     else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputField.innerHTML = finalResult;
         firstInputArray.push(finalResult);
@@ -253,6 +258,7 @@ subtraction.addEventListener("click",() => {
         secondInputField.innerHTML ="";
         answerField.innerHTML = "";
     }
+    //pushes negative sign into secondInputField if firstInputField and mathSign are occupied
     else if (mathSign !== "") {
         secondInputArray.push("-");
         secondInputField.innerHTML = "-";
@@ -261,10 +267,11 @@ subtraction.addEventListener("click",() => {
 });
 
 multiplication.addEventListener("click",() => {
+    // pushes x sign into mathSign if only firstInputField is not empty
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "x", functionBox.innerHTML = "x";
     }
-    // turns the finalResult into the firstInputField
+    // turns the finalResult into the firstInputField and pushes x sign into mathSign
     else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputField.innerHTML = finalResult;
         firstInputArray.push(finalResult);
@@ -276,10 +283,11 @@ multiplication.addEventListener("click",() => {
 });
 
 division.addEventListener("click",() => {
+    // pushes / sign into mathSign if only firstInputField is not empty
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "/", functionBox.innerHTML = "/";
     }
-    // turns the finalResult into the firstInputField
+    // turns the finalResult into the firstInputField and pushes / sign into mathSign
     else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputField.innerHTML = finalResult;
         firstInputArray.push(finalResult);
@@ -291,10 +299,11 @@ division.addEventListener("click",() => {
 });
 
 exponent.addEventListener("click",() => {
+    // pushes ^ into mathSign if only firstInputField is not empty
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "^", functionBox.innerHTML = "^";
     }
-    // turns the finalResult into the firstInputField
+    // turns the finalResult into the firstInputField and pushes ^ into mathSign
     else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputField.innerHTML = finalResult;
         firstInputArray.push(finalResult);
@@ -306,10 +315,11 @@ exponent.addEventListener("click",() => {
 });
 
 root.addEventListener("click", () => {
+    // pushes √ into mathSign if only the firstInputField is not empty
     if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign ="√", functionBox.innerHTML = "√";
     }
-    // turns the finalResult into the firstInputField
+    // turns the finalResult into the firstInputField and pushes √ into mathSign
     else if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
         firstInputField.innerHTML = finalResult;
         firstInputArray.push(finalResult);
@@ -332,6 +342,7 @@ root.addEventListener("click", () => {
 // what happens when you press =
 let finalResult = 0;
 equal.addEventListener("click",() =>{
+    // converts the first and second input arrays into numbers
     let firstInputNumber = Number(firstInputArray.join(""));
     let secondInputNumber = Number(secondInputArray.join(""));
         switch (mathSign) {
@@ -363,14 +374,14 @@ equal.addEventListener("click",() =>{
                 finalResult = "error";
         }
     answerField.innerHTML = ` = ${finalResult}`;
-    // clears the first and second inpux boxes
+    // clears the first and second inpux boxes and mathSign
     firstInputArray = [];
     mathSign = "";
     secondInputArray = [];
     return finalResult;
 });
 
-// ac button
+// ac button, clears answerField, first and secondInputArray, mathSign, functionBox, and first and secondInputFields
 ac.addEventListener("click", () => {
     firstInputArray = [], firstInputField.innerHTML = "";
     mathSign = "", functionBox.innerHTML ="";
