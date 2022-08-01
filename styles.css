@@ -9,15 +9,13 @@ body {
   background-color: #A0D9EF;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 17.09fr;
+  grid-template-rows: 1fr 100fr;
   max-height: 100vh;
   max-width: 100vw;
-  height: 100vh;
-  width: 100vw;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 20px;
   text-align: center;
   color: whitesmoke;
 }
@@ -68,11 +66,12 @@ main #keys #otherkeys .numbers {
 }
 
 button {
+  background-color: #343C5B;
   background-color: #ffbcd9;
   border-radius: 11px;
   border-style: double;
   color: #0D638F;
-  font-size: 50px;
+  font-size: 35px;
   border-color: #BF8EA3;
 }
 
@@ -80,4 +79,42 @@ button {
   border-radius: 30px;
   background-color: #BDFFBF;
   color: #0D638F;
+}
+
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+  button {
+    font-size: 45px;
+  }
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 35px;
+  }
+  button {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 40px;
+  }
+  button {
+    font-size: 55px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  h1 {
+    font-size: 45px;
+  }
+  button {
+    font-size: 60px;
+  }
 }/*# sourceMappingURL=styles.css.map */

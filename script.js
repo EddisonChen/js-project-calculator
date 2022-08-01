@@ -182,7 +182,7 @@ decimal.addEventListener("click", () => {
     // }});
 
     // when starting new calculation, pushes a decimal point to first input box
-    if (mathSign === "" && firstInputField.innerHTML == "" && secondInputField.innerHTML == "") {
+    if (mathSign === "" && firstInputField.innerHTML == "" && secondInputField.innerHTML) {
         firstInputArray.push(".");
         firstInputField.innerHTML = ".";
         secondInputField.innerHTML = "";
@@ -216,19 +216,26 @@ decimal.addEventListener("click", () => {
 
 // math functions
 addition.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign == "") {
+    if (firstInputField.innerHTML !== "" && mathSign == "" && secondInputField.innerHTML == "") {
         mathSign = "+", functionBox.innerHTML = "+";
     }
     else;
 });
 
 subtraction.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "-", functionBox.innerHTML = "-";
     }
     else if (firstInputField.innerHTML == "" && mathSign =="") {
         firstInputArray.push("-");
         firstInputField.innerHTML = "-";
+    }
+    // allows a negative sign to be pushed into the firstInputField after a calculation has already been done
+    else if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML !== "" && answerField.innerHTML !== "") {
+        firstInputArray.push("-");
+        firstInputField.innerHTML = "-";
+        secondInputField.innerHTML = "";
+        functionBox.innerHTML = "";
     }
     else if (mathSign !== "") {
         secondInputArray.push("-");
@@ -238,28 +245,28 @@ subtraction.addEventListener("click",() => {
 });
 
 multiplication.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "x", functionBox.innerHTML = "x";
     }
     else;
 });
 
 division.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "/", functionBox.innerHTML = "/";
     }
     else;
 });
 
 exponent.addEventListener("click",() => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign = "^", functionBox.innerHTML = "^";
     }
     else;
 });
 
 root.addEventListener("click", () => {
-    if (firstInputField.innerHTML !== "" && mathSign =="") {
+    if (firstInputField.innerHTML !== "" && mathSign =="" && secondInputField.innerHTML == "") {
         mathSign ="√", functionBox.innerHTML = "√";
     }
     else;
