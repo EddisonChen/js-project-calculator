@@ -26,7 +26,7 @@ main {
   grid-template-rows: 1fr 3fr;
 }
 main h2, main h3, main h4, main h5 {
-  font-size: 60px;
+  font-size: 40px;
 }
 main .inputs {
   display: flex;
