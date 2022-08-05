@@ -26,7 +26,7 @@ main {
   grid-template-rows: 1fr 3fr;
 }
 main h2, main h3, main h4, main h5 {
-  font-size: 60px;
+  font-size: 40px;
 }
 main .inputs {
   display: flex;
@@ -85,6 +85,9 @@ button {
   h1 {
     font-size: 25px;
   }
+  h2, h3, h4, h5 {
+    font-size: 45px;
+  }
 }
 @media screen and (min-width: 600px) {
   h1 {
@@ -92,6 +95,9 @@ button {
   }
   button {
     font-size: 45px;
+  }
+  h2, h3, h4, h5 {
+    font-size: 50px;
   }
 }
 @media screen and (min-width: 800px) {
@@ -101,6 +107,9 @@ button {
   button {
     font-size: 50px;
   }
+  h2, h3, h4, h5 {
+    font-size: 55px;
+  }
 }
 @media screen and (min-width: 1000px) {
   h1 {
@@ -108,6 +117,9 @@ button {
   }
   button {
     font-size: 55px;
+  }
+  h2, h3, h4, h5 {
+    font-size: 60px;
   }
 }
 @media screen and (min-width: 1500px) {
